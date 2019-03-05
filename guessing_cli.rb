@@ -13,7 +13,7 @@ if user_input == num
   if user_input == "exit"
   puts "Goodbye!"
   end
-end
+
 
 
 
