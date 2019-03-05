@@ -1,24 +1,18 @@
 def run_guessing_game
-  num = rand(1..6).to_s
+  answer = rand(1..6)
   puts "Guess a number between 1 and 6."
-  while user_input = gets.chomp.to_s
-    case user_input
-    when num
+  guess = gets.chomp
+  while guess != "exit"
+    if guess.to_i == answer
       puts "You guessed the correct number!"
-      break
-    when user_input != num
-      puts "The computer guessed #{num}"
-      break
-  when user_input == "exit"
-      puts "Goodbye!"
-      break
-    else
-      puts "What did you do?!"
-      break
-      end
+    elsif guess.to_i != answer
+      puts "The computer guessed #{answer}."
+    end
+    answer = rand(1..6)
+    puts "Guess a number between 1 and 6."
+    guess = gets.chomp
   end
+  if guess == "exit"
+    puts "Goodbye!"
   end
-
-
-
-run_guessing_game
+end
